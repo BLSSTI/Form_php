@@ -1,6 +1,5 @@
 <?php
-
-require './Models/Model.php';
+require 'Model.php';
 
 class Contato extends Model
 {
@@ -27,11 +26,24 @@ class Contato extends Model
   ];
 
   public function create ($request){
+   
     try{ 
-        $query = "INSERT INTO dados (".
-        implode(', ', array_keys($request)).
-        ") VALUES (".
-        implode(', ', array_values($request)).");";
+
+      $definir = [];
+      foreach ($request as $key => $value) {
+        if (is_string($value)){
+            $definir[] = "'{$value}'";
+
+        }
+        else{
+          $definir[] = "{$value}";
+        }
+       
+      }
+        $query = "INSERT INTO contatos VALUES ('',".
+        implode(', ', array_values($definir)).");";
+
+        var_dump($query);
         $this->executeQuery($query);
       }
     catch(\Exception $e){

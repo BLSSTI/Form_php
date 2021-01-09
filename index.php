@@ -1,7 +1,8 @@
 <?php
 
 require './Controllers/ContatoController.php';
-require './Models/Contato.php';
+
+
 
 //include './Controllers/ContatoController.php';
 //require './Controllers/ContatoController.php';

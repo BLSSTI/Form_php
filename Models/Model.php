@@ -1,5 +1,5 @@
 <?php
-require 'Database/Conexao.php';
+require __DIR__. '/../Database/conexao.php';
 
 class Model
 {

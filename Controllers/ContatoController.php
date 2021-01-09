@@ -1,7 +1,9 @@
 <?php
-
+require __DIR__. '/../Models/Contato.php';
 class ContatoController
 {
+
+
   public function __construct()
   {
 
@@ -11,7 +13,6 @@ class ContatoController
     try{
       $contato = new Contato();
       $contato->create($request);
-      echo 'nice';
     }catch(\Exception $e){
       echo $e;
 

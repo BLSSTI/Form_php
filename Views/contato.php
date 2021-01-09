@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-light mb-5 bg-secondary">
   <div class="container-fluid">
     <span class="navbar-text">
@@ -5,7 +7,7 @@
     </span>
   </div>
 </nav>
-  <form id="form" name="form" class="row g-3" method="post">
+  <form id="form" name="form" class="row g-3" method="post" action="http://localhost/crud/Requests/ContatoRequest.php">
   <div class="col-md-4">
     <label for="inputEmail4" class="form-label">CPF</label>
     <input type="text" name="cpf" class="form-control" id="cpf" value="<?php
@@ -22,7 +24,7 @@
 
   <div class="col-md-3">
     <label for="inputAddress" class="form-label">Órg.Exp</label>
-    <input type="text" class="form-control" name= "orgexp" id="orgexp" 
+    <input type="text" class="form-control" name= "org_exp" id="org_exp" 
     value="<?php echo isset($contato->orgexp) ? $contato->orgexp : null;
       ?> "placeholder="ex: ssp/ba">
   </div>
@@ -51,7 +53,7 @@
 
   <div class="col-md-3">
     <label for="inputCity" class="form-label">Data Nascimento</label>
-    <input type="text" class="form-control" name="datanascimento" id="datanascimento"
+    <input type="text" class="form-control" name="data_nascimento" id="data_nascimento"
     value="<?php echo isset($contato->datanascimento) ? $contato->datanascimento : null;?>">
   </div>
 
@@ -71,7 +73,7 @@
 
   <div class="col-md-4">
     <label for="estadocivil" class="form-label">Estado civil</label>
-    <select name ="estadocivil" id="estadocivil" class="form-select"
+    <select name ="estado_civil" id="estado_civil" class="form-select"
     value="<?php echo isset($contato->estadocivil) ? $contato->estadocivil : null;?>">
       <option selected>Selecione...</option>
       <option>Solteiro</option>
@@ -86,7 +88,7 @@
 
   <div class="col-md-6">
     <label for="curriculo" class="form-label">Link Currículo Latters</label>
-    <input type="text" class="form-control" name="curriculo" id="curriculo"
+    <input type="text" class="form-control" name="link_curriculo_lattes" id="link_curriculo_lattes"
     value="<?php echo isset($contato->curriculo) ? $contato->curriculo : null;?>"> 
   </div>
 
@@ -104,28 +106,22 @@
 
   <div class="col-md-6">
     <label for="instituicao" class="form-label">Instituição Titulação</label>
-    <input type="text" class="form-control" name="instituicao" id="instituicao"
+    <input type="text" class="form-control" name="instituicao_titulacao" id="instituicao_titulacao"
     value="<?php echo isset($contato->titulacao) ? $contato->titulacao : null;?>">
   </div>
 
   <div class="col-md-2">
     <label for="anotitulacao" class="form-label">Ano Titulação</label>
-    <input type="text" class="form-control" name="anotitulacao" id="anotitulacao"
+    <input type="text" class="form-control" name="ano_titulacao" id="ano_titulacao"
     value="<?php echo isset($contato->anotitulacao) ? $contato->anotitulacao : null;?>">
   </div>
+
+  <div class="col-4">
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+
   </form>
 
-  <div class="col-4">
-    <button type="submit" class="btn btn-primary" onclick="cadastrar()">Enviar</button>
-  </div>
-
-  <div class="col-4">
-    <button type="submit" class="btn btn-primary">Apagar</button>
-  </div>
-
-  <div class="col-4">
-    <button type="submit" class="btn btn-primary">Atualizar</button>
-  </div>
 
   <div class="container mt-5">
   <table class="table table-dark table-hover">

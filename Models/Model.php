@@ -17,4 +17,18 @@ class Model
     
     }
   }
+
+  public function select($query){
+    $stmt = $this->conexao->prepare($query);
+    $stmt->execute();
+    $sql = $stmt->fetchAll();
+    return $sql;
+  }
+
+  public function selectOne($query){
+    $stmt = $this->conexao->prepare($query);
+    $stmt->execute();
+    $sql = $stmt->fetch();
+    return json_encode($sql);
+  }
 }

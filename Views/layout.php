@@ -10,9 +10,7 @@
   <body>
 
   <div class="container-sm mt-5">
-    <?php include "contato.php"; ?>
-    <?php include "./Requests";?>
-
+    <?php $this->loadView($viewName, $dados); ?>
   </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
